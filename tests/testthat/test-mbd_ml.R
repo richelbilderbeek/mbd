@@ -59,6 +59,30 @@ test_that("compare results from bd and mbd in case of nu = q = 0", {
   )
 })
 
+test_that("nu = q = 0 gives error", {
+
+  if (!is_on_ci()) {
+    skip("To be performed on ci.")
+  }
+  # This setting gives a rather unhelpful error:
+  #
+  # Error: in ‘subplex’: f() values at end points not of opposite sign
+  #
+  set.seed(44)
+  expect_silent(
+    mbd_ml(
+      brts = c(3.0, 2.0),
+      start_pars = c(0.3, 0.1, 0.0, 0.0),
+      true_pars = c(0.3, 0.1, 0.0, 0.0),
+      optim_ids = c(TRUE, TRUE, FALSE, FALSE),
+      cond = 1,
+      n_0 = 2,
+      verbose = FALSE
+    )
+  )
+})
+
+
 test_that("mbd_ml can be silent", {
 
   if (!is_on_ci()) {
