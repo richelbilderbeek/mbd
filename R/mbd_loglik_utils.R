@@ -16,7 +16,7 @@
 #'   testthat::expect_equal(m[3, 1], 0.04)
 #'   testthat::expect_equal(m[3, 2], 0.405)
 #'   testthat::expect_equal(m[3, 3], 0.6561)
-#' @author Hanno Hildenbrandt, adapted by Richel J.C. Bilderbeek
+#' @author Hanno Hildenbrandt, adapted by Richèl J.C. Bilderbeek
 #' @export
 hyper_a_hanno <- function(
   n_species,
